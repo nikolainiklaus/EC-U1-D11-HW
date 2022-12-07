@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Shop</title>
+        <script>
+            // Function to change the h1 text to something else
+            function changeH1Text(newText) {
+                document.querySelector("h1").innerText = newText;
+            }
+
+            // Function to change the page background color
+            function changeBackgroundColor(color) {
+                document.body.style.backgroundColor = color;
+            }
+
+            // Function to change the footer address with a fake one
+            function changeFooterAddress(newAddress) {
+                document.querySelector("footer p").innerText = newAddress;
+            }
+
+            // Function to add a CSS class to every Amazon link
+            function addClassToAmazonLinks(className) {
+                var links = document.querySelectorAll("a[href*='amazon']");
+                for (var i = 0; i < links.length; i++) {
+                    links[i].classList.add(className);
+                }
+            }
+
+            // Function to toggle a CSS class for all the images in the table
+            function toggleClassForTableImages(className) {
+                var images = document.querySelectorAll("table img");
+                for (var i = 0; i < images.length; i++) {
+                    images[i].classList.toggle(className);
+                }
+            }
+
+            // Function to color the price of the products in a different way every time it's invoked
+            function colorProductPrices() {
+                var prices = document.querySelectorAll("table td:last-child");
+                for (var i = 0; i < prices.length; i++) {
+                    prices[i].style.color = randomColor();
+                }
+            }
+
+            // Helper function to generate a random color
+            function randomColor() {
+                var red = Math.floor(Math.random() * 256);
+                var green = Math.floor(Math.random() * 256);
+                var blue = Math.floor(Math.random() * 256);
+                return "rgb(" + red + "," + green + "," + blue + ")";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>My Shop</h1>
+        <table>
+            <tr>
+                <th>Product Image</th>
+                <th>Product Title</th>
+                <th>Product Description</th>
+                <th>Product Price</th>
+            </tr>
+            <tr>
+                <td><img src="product1.jpg" alt="Product 1"></td>
+                <td><a href="https://www.amazon.com/product1">Product 1</a></td>
+                <td>Description of product 1</td>
+                <td>$10.99</td>
+            </tr>
+            <tr>
+                <td><img src="product2.jpg" alt="Product 2"></td>
+                <td><a href="https://www.amazon.com/product2">Product 2</a></td>
+                <td>Description of product 2</td>
+                <td>$12.99</td>
+            </tr>
+            <tr>
+                <td><img src="product3.jpg" alt="Product 3"></td>
+                <td><a href="https://www.amazon.com/product3">Product 3</a></td>
+                <td>Description of product 3</td>
+                <td>$14.99</td>
+            </tr>
+            <tr>
+                <td><img src="product4.jpg" alt="Product 4"></td>
+                <td><a href="https://www.amazon.com/product4">Product 4</a></td>
+                <td>Description of product 4</td>
+                <td>$16.99</td>
+            </tr>
+            <tr>
+                <td><img src="product5.jpg" alt="Product 5"></td>
+                <td><a href="https://www.amazon.com/product5">Product 5</a></td>
+                <td>Description of product 5</td>
+                <td>$18.99</td>
+            </tr>
+        </table>
+        <footer>
+            <p>My Shop, 123 Main Street, Anytown, USA</p>
+        </footer>
+        <h2>Message Board</h2>
+        <textarea rows="4" cols="50"></textarea>
+        <div>
+            <button onclick="changeH1Text('My Awesome Shop')">Change H1 Text</button>
+            <button onclick="changeBackgroundColor('lightgreen')">Change Background Color</button>
+            <button onclick="changeFooterAddress('Fake Address, Nowhere, USA')">Change Footer Address</button>
+            <button onclick="addClassToAmazonLinks('amazon')">Add Class to Amazon Links</button>
+            <button onclick="toggleClassForTableImages('hidden')">Toggle Images</button>
+            <button onclick="colorProductPrices()">Color Prices</button>
+        </div>
+    </body>
+</html>
